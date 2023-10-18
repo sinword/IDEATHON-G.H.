@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Scene: Decodable {
-    let name: String
+struct FutureScene: Decodable {
+    let place: String
     let intro: String
 }
