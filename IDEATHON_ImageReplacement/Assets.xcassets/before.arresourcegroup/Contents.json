@@ -1,0 +1,14 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "resources" : [
+    {
+      "filename" : "Gas Station Before.arreferenceimage"
+    },
+    {
+      "filename" : "Office of President Before.arreferenceimage"
+    }
+  ]
+}

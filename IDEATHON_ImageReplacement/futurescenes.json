@@ -1,0 +1,14 @@
+{
+	"gas station": {
+        "Place": "Gas Station",
+        "Intro": "Gas stations, also known as fueling stations or petrol stations, are facilities designed for the refueling of vehicles with gasoline, diesel, or alternative fuels. They typically offer various grades of fuel, such as regular, mid-grade, and premium, to cater to different engine requirements. Additionally, many gas stations provide services like car maintenance, convenience stores, and restrooms for customer convenience. These stations are strategically located along roadways and in urban areas to provide accessible refueling options for vehicles of all types."
+	},	
+	"tesla": {
+		"name": "Nikola Tesla",
+		"dates": "1856-1943",
+		"field": "Engineering",
+		"bio": "Nikola Tesla (10 July 1856 – 7 January 1943) was a Serbian-American inventor, electrical engineer, mechanical engineer, and futurist who is best known for his contributions to the design of the modern alternating current (AC) electricity supply system.",
+		"country": "serbia",
+		"source": "https://en.wikipedia.org/wiki/Nikola_Tesla"
+	}
+}
