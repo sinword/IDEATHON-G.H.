@@ -18,6 +18,7 @@
 		7223B7B82AE0103000A763E9 /* futurescenes.json in Resources */ = {isa = PBXBuildFile; fileRef = 7223B7B72AE0103000A763E9 /* futurescenes.json */; };
 		7223B7BA2AE011C700A763E9 /* FutureScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7223B7B92AE011C700A763E9 /* FutureScene.swift */; };
 		7277CF4D2AE55BD7009F63AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277CF4C2AE55BD7009F63AB /* ContentView.swift */; };
+		729A290B2AE66DCE0055160F /* CountingDown.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 729A290A2AE66DCE0055160F /* CountingDown.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,10 +44,11 @@
 		7223B7B02AE00F2700A763E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7223B7B72AE0103000A763E9 /* futurescenes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = futurescenes.json; sourceTree = "<group>"; };
 		7223B7B92AE011C700A763E9 /* FutureScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureScene.swift; sourceTree = "<group>"; };
-		7277CF482AE54D7B009F63AB /* IDEATHON_ImageReplacement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDEATHON_ImageReplacement.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7277CF482AE54D7B009F63AB /* IDEATHON_ImageReplacement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = IDEATHON_ImageReplacement.app; path = "/Users/hsinyi/Desktop/IDEATHON_ImageReplacement/build/Debug-iphoneos/IDEATHON_ImageReplacement.app"; sourceTree = "<absolute>"; };
 		7277CF4C2AE55BD7009F63AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7277CF532AE57141009F63AB /* Syncopate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Syncopate.ttf; sourceTree = "<group>"; };
 		7277CF5B2AE572A0009F63AB /* NotoSansCJKTC.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NotoSansCJKTC.ttf; sourceTree = "<group>"; };
+		729A290A2AE66DCE0055160F /* CountingDown.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = CountingDown.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				7223B7A62AE00F2600A763E9 /* IDEATHON_ImageReplacement */,
-				7277CF482AE54D7B009F63AB /* IDEATHON_ImageReplacement.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +81,7 @@
 				7223B7B72AE0103000A763E9 /* futurescenes.json */,
 				7223B7B92AE011C700A763E9 /* FutureScene.swift */,
 				7277CF4C2AE55BD7009F63AB /* ContentView.swift */,
+				729A29042AE65C6D0055160F /* Videos */,
 			);
 			path = IDEATHON_ImageReplacement;
 			sourceTree = "<group>";
@@ -93,6 +95,14 @@
 				721783682AE598D2003C0DFF /* SyncopateBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		729A29042AE65C6D0055160F /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				729A290A2AE66DCE0055160F /* CountingDown.mp4 */,
+			);
+			path = Videos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +170,7 @@
 				721783622AE57690003C0DFF /* Syncopate.ttf in Resources */,
 				7223B7B12AE00F2700A763E9 /* Assets.xcassets in Resources */,
 				7223B7B82AE0103000A763E9 /* futurescenes.json in Resources */,
+				729A290B2AE66DCE0055160F /* CountingDown.mp4 in Resources */,
 				7223B7AF2AE00F2600A763E9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,8 +338,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,8 +368,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

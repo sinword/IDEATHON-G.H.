@@ -8,19 +8,23 @@
 import UIKit
 import SceneKit
 import ARKit
+import AVFoundation
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     var futureScenes = [String: FutureScene]()
     
+    var videoPlayer: AVPlayer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Set the view's delegate
         sceneView = ARSCNView(frame: view.bounds)
+        print("SceneView size: \(sceneView.frame.size)")
         view.addSubview(sceneView)
-        
+
         sceneView.delegate = self
         
         loadData()
@@ -66,7 +70,21 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         let newPlace = place.replacingOccurrences(of: "Before", with: "After")
         print(newPlace)
-        plane.firstMaterial?.diffuse.contents = newPlace
+        // replace AR image with a video, video size follows the image's size
+        let videoURL = Bundle.main.url(forResource: "CountingDown", withExtension: "mp4")!
+        videoPlayer = AVPlayer(url: videoURL)
+        let videoScene = SKScene(size: CGSize(width: 480, height: 360))
+        let videoNode = SKVideoNode(avPlayer: videoPlayer)
+        videoNode.position = CGPoint(x: videoScene.size.width / 2, y: videoScene.size.height / 2)
+        videoNode.size = videoScene.size
+        videoNode.yScale = -1.0
+        videoNode.play()
+        videoScene.addChild(videoNode)
+        plane.firstMaterial?.diffuse.contents = videoScene
+        // After video is played, the displayed content will be replaced by the image "newPlace"
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: videoPlayer.currentItem, queue: nil) { notification in
+            plane.firstMaterial?.diffuse.contents = UIImage(named: newPlace)
+        }
         
         let node = SCNNode()
         node.addChildNode(planeNode)
