@@ -15,11 +15,14 @@
 		7223B7A82AE00F2600A763E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7223B7A72AE00F2600A763E9 /* AppDelegate.swift */; };
 		7223B7AC2AE00F2600A763E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7223B7AB2AE00F2600A763E9 /* ViewController.swift */; };
 		7223B7AF2AE00F2600A763E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7223B7AD2AE00F2600A763E9 /* Main.storyboard */; };
-		7223B7B12AE00F2700A763E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7223B7B02AE00F2700A763E9 /* Assets.xcassets */; };
 		7223B7B82AE0103000A763E9 /* futurescenes.json in Resources */ = {isa = PBXBuildFile; fileRef = 7223B7B72AE0103000A763E9 /* futurescenes.json */; };
 		7223B7BA2AE011C700A763E9 /* FutureScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7223B7B92AE011C700A763E9 /* FutureScene.swift */; };
 		7277CF4D2AE55BD7009F63AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277CF4C2AE55BD7009F63AB /* ContentView.swift */; };
+		729552CA2AE78C1400F26BA6 /* animation.html in Resources */ = {isa = PBXBuildFile; fileRef = 729552C82AE78C1400F26BA6 /* animation.html */; };
+		729552CB2AE78C1400F26BA6 /* styles.css in Resources */ = {isa = PBXBuildFile; fileRef = 729552C92AE78C1400F26BA6 /* styles.css */; };
 		729A290B2AE66DCE0055160F /* CountingDown.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 729A290A2AE66DCE0055160F /* CountingDown.mp4 */; };
+		72D68A662AE821DC00732745 /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D68A652AE821DC00732745 /* SelectButton.swift */; };
+		72EC99712AE8D93C00DFCD79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72EC99702AE8D93C00DFCD79 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,14 +46,17 @@
 		7223B7A72AE00F2600A763E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7223B7AB2AE00F2600A763E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7223B7AE2AE00F2600A763E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7223B7B02AE00F2700A763E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7223B7B72AE0103000A763E9 /* futurescenes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = futurescenes.json; sourceTree = "<group>"; };
 		7223B7B92AE011C700A763E9 /* FutureScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureScene.swift; sourceTree = "<group>"; };
 		7277CF4C2AE55BD7009F63AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7277CF532AE57141009F63AB /* Syncopate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Syncopate.ttf; sourceTree = "<group>"; };
 		7277CF5B2AE572A0009F63AB /* NotoSansCJKTC.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NotoSansCJKTC.ttf; sourceTree = "<group>"; };
 		7284754A2AE68BC60011E698 /* IDEATHON_ImageReplacement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDEATHON_ImageReplacement.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		729552C82AE78C1400F26BA6 /* animation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = animation.html; sourceTree = "<group>"; };
+		729552C92AE78C1400F26BA6 /* styles.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = styles.css; sourceTree = "<group>"; };
 		729A290A2AE66DCE0055160F /* CountingDown.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = CountingDown.mp4; sourceTree = "<group>"; };
+		72D68A652AE821DC00732745 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
+		72EC99702AE8D93C00DFCD79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,12 +86,15 @@
 				7223B7A72AE00F2600A763E9 /* AppDelegate.swift */,
 				7223B7AB2AE00F2600A763E9 /* ViewController.swift */,
 				7223B7AD2AE00F2600A763E9 /* Main.storyboard */,
-				7223B7B02AE00F2700A763E9 /* Assets.xcassets */,
 				7223B7B72AE0103000A763E9 /* futurescenes.json */,
 				7223B7B92AE011C700A763E9 /* FutureScene.swift */,
 				7277CF4C2AE55BD7009F63AB /* ContentView.swift */,
 				729A29042AE65C6D0055160F /* Videos */,
 				721B9FA22AE6AD1500F2E509 /* LaunchScreen.storyboard */,
+				729552C82AE78C1400F26BA6 /* animation.html */,
+				729552C92AE78C1400F26BA6 /* styles.css */,
+				72D68A652AE821DC00732745 /* SelectButton.swift */,
+				72EC99702AE8D93C00DFCD79 /* Assets.xcassets */,
 			);
 			path = IDEATHON_ImageReplacement;
 			sourceTree = "<group>";
@@ -169,12 +178,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				721B9FA32AE6AD1500F2E509 /* LaunchScreen.storyboard in Resources */,
+				729552CA2AE78C1400F26BA6 /* animation.html in Resources */,
+				72EC99712AE8D93C00DFCD79 /* Assets.xcassets in Resources */,
 				721783692AE598D2003C0DFF /* SyncopateBold.ttf in Resources */,
 				721783672AE598A6003C0DFF /* NotoSansCJKTCBold.ttf in Resources */,
 				721783632AE57693003C0DFF /* NotoSansCJKTC.ttf in Resources */,
 				721783622AE57690003C0DFF /* Syncopate.ttf in Resources */,
-				7223B7B12AE00F2700A763E9 /* Assets.xcassets in Resources */,
 				7223B7B82AE0103000A763E9 /* futurescenes.json in Resources */,
+				729552CB2AE78C1400F26BA6 /* styles.css in Resources */,
 				729A290B2AE66DCE0055160F /* CountingDown.mp4 in Resources */,
 				7223B7AF2AE00F2600A763E9 /* Main.storyboard in Resources */,
 			);
@@ -191,6 +202,7 @@
 				7223B7A82AE00F2600A763E9 /* AppDelegate.swift in Sources */,
 				7277CF4D2AE55BD7009F63AB /* ContentView.swift in Sources */,
 				7223B7BA2AE011C700A763E9 /* FutureScene.swift in Sources */,
+				72D68A662AE821DC00732745 /* SelectButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

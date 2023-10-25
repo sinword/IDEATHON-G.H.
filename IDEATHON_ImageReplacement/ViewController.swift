@@ -9,26 +9,27 @@ import UIKit
 import SceneKit
 import ARKit
 import AVFoundation
+import Combine
 
 class ViewController: UIViewController, ARSCNViewDelegate {
-
+    
     @IBOutlet var sceneView: ARSCNView!
     var futureScenes = [String: FutureScene]()
-    
     var videoPlayer: AVPlayer!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Set the view's delegate
         sceneView = ARSCNView(frame: view.bounds)
-        print("SceneView size: \(sceneView.frame.size)")
         view.addSubview(sceneView)
 
         sceneView.delegate = self
         
         loadData()
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -61,6 +62,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         print(futureScene.place)
         print(futureScene.intro)
         
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ARImagedetected"), object: nil)
+        }
+    
         let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
         
         let planeNode = SCNNode(geometry: plane)
@@ -68,9 +73,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Image replace
         
-        let newPlace = place.replacingOccurrences(of: "Before", with: "After")
+        let newPlace = place + " " + customPrompt
+//        let newPlace = place.replacingOccurrences(of: "Before", with: " " + customPrompt)
+//        let newPlace = "Gas Station MinimalistSunnyHigh"
         print(newPlace)
+        
+        // Post a notification to refresh the UI
+        
         // replace AR image with a video, video size follows the image's size
+        // Play video on the plane
+        // After video is played, fade away with a new image
         let videoURL = Bundle.main.url(forResource: "CountingDown", withExtension: "mp4")!
         videoPlayer = AVPlayer(url: videoURL)
         let videoScene = SKScene(size: CGSize(width: 480, height: 360))
@@ -81,8 +93,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         videoNode.play()
         videoScene.addChild(videoNode)
         plane.firstMaterial?.diffuse.contents = videoScene
-        // After video is played, the displayed content will be replaced by the image "newPlace"
-        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: videoPlayer.currentItem, queue: nil) { notification in
+        
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: videoPlayer.currentItem, queue: .main) { _ in
             plane.firstMaterial?.diffuse.contents = UIImage(named: newPlace)
         }
         
@@ -106,9 +118,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         bioNode.position.x += Float(plane.width / 2) + spacing
         bioNode.position.y = titleNode.position.y - titleNode.height - spacing
         planeNode.addChildNode(bioNode)
-        
-        
         return node
+    
     }
     
     func loadData() {
@@ -145,6 +156,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         return textNode
     }
+    
 }
 
 // Essentail for almost every single ARKit project

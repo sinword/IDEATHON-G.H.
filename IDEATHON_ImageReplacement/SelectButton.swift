@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct SelectButton: View {
+    @Binding var isSelected: Bool
+    @State var color: Color
+    @State var text: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Text(text)
+                .foregroundColor(isSelected ? color : color.opacity(0.5)) 
+                .font(Font.custom("Syncopate", size: 15).weight(.bold))
+        }
     }
 }
 
 #Preview {
-    SelectButton()
+    SelectButton(isSelected: .constant(false), color: Color("SystemBlue"), text: "Option")
 }
