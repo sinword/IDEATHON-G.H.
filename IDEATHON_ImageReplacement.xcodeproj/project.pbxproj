@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7208F44F2AEA72D200248BFD /* loadingAnimationLoading.html in Resources */ = {isa = PBXBuildFile; fileRef = 7208F44E2AEA72D200248BFD /* loadingAnimationLoading.html */; };
 		7208F4512AEA733E00248BFD /* loadingAnimationCompleted.html in Resources */ = {isa = PBXBuildFile; fileRef = 7208F4502AEA733E00248BFD /* loadingAnimationCompleted.html */; };
-		7208F4532AEA746D00248BFD /* loadingAnimation2.css in Resources */ = {isa = PBXBuildFile; fileRef = 7208F4522AEA746D00248BFD /* loadingAnimation2.css */; };
 		7208F4552AEA8BE900248BFD /* 自由廣場轉場.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7208F4542AEA8BE900248BFD /* 自由廣場轉場.mp4 */; };
 		7208F4582AEA8C5E00248BFD /* 101 世貿轉場.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7208F4562AEA8C5D00248BFD /* 101 世貿轉場.mp4 */; };
 		7208F4592AEA8C5E00248BFD /* 松菸轉場.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7208F4572AEA8C5E00248BFD /* 松菸轉場.mp4 */; };
@@ -24,8 +23,11 @@
 		7223B7BA2AE011C700A763E9 /* FutureScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7223B7B92AE011C700A763E9 /* FutureScene.swift */; };
 		7277CF4D2AE55BD7009F63AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277CF4C2AE55BD7009F63AB /* ContentView.swift */; };
 		729552CA2AE78C1400F26BA6 /* loadingAnimationInitializing.html in Resources */ = {isa = PBXBuildFile; fileRef = 729552C82AE78C1400F26BA6 /* loadingAnimationInitializing.html */; };
-		729552CB2AE78C1400F26BA6 /* loadingAnimation1.css in Resources */ = {isa = PBXBuildFile; fileRef = 729552C92AE78C1400F26BA6 /* loadingAnimation1.css */; };
 		72D68A662AE821DC00732745 /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D68A652AE821DC00732745 /* SelectButton.swift */; };
+		72E56A7C2AEAB3E200DAA704 /* loadingAnimation2.css in Resources */ = {isa = PBXBuildFile; fileRef = 72E56A742AEAB3E100DAA704 /* loadingAnimation2.css */; };
+		72E56A7D2AEAB3E200DAA704 /* FutureScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E56A752AEAB3E100DAA704 /* FutureScene.swift */; };
+		72E56A7F2AEAB3E200DAA704 /* futurescenes.json in Resources */ = {isa = PBXBuildFile; fileRef = 72E56A772AEAB3E200DAA704 /* futurescenes.json */; };
+		72E56A832AEAB46500DAA704 /* loadingAnimation1.css in Resources */ = {isa = PBXBuildFile; fileRef = 72E56A822AEAB46500DAA704 /* loadingAnimation1.css */; };
 		72EC99712AE8D93C00DFCD79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72EC99702AE8D93C00DFCD79 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +47,6 @@
 /* Begin PBXFileReference section */
 		7208F44E2AEA72D200248BFD /* loadingAnimationLoading.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = loadingAnimationLoading.html; sourceTree = "<group>"; };
 		7208F4502AEA733E00248BFD /* loadingAnimationCompleted.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = loadingAnimationCompleted.html; sourceTree = "<group>"; };
-		7208F4522AEA746D00248BFD /* loadingAnimation2.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = loadingAnimation2.css; sourceTree = "<group>"; };
 		7208F4542AEA8BE900248BFD /* 自由廣場轉場.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "自由廣場轉場.mp4"; sourceTree = "<group>"; };
 		7208F4562AEA8C5D00248BFD /* 101 世貿轉場.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "101 世貿轉場.mp4"; sourceTree = "<group>"; };
 		7208F4572AEA8C5E00248BFD /* 松菸轉場.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "松菸轉場.mp4"; sourceTree = "<group>"; };
@@ -62,8 +63,11 @@
 		7277CF5B2AE572A0009F63AB /* NotoSansCJKTC.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NotoSansCJKTC.ttf; sourceTree = "<group>"; };
 		7284754A2AE68BC60011E698 /* IDEATHON_ImageReplacement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDEATHON_ImageReplacement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		729552C82AE78C1400F26BA6 /* loadingAnimationInitializing.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = loadingAnimationInitializing.html; sourceTree = "<group>"; };
-		729552C92AE78C1400F26BA6 /* loadingAnimation1.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = loadingAnimation1.css; sourceTree = "<group>"; };
 		72D68A652AE821DC00732745 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
+		72E56A742AEAB3E100DAA704 /* loadingAnimation2.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = loadingAnimation2.css; sourceTree = "<group>"; };
+		72E56A752AEAB3E100DAA704 /* FutureScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FutureScene.swift; sourceTree = "<group>"; };
+		72E56A772AEAB3E200DAA704 /* futurescenes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = futurescenes.json; sourceTree = "<group>"; };
+		72E56A822AEAB46500DAA704 /* loadingAnimation1.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = loadingAnimation1.css; sourceTree = "<group>"; };
 		72EC99702AE8D93C00DFCD79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,8 +105,10 @@
 				7208F4502AEA733E00248BFD /* loadingAnimationCompleted.html */,
 				729552C82AE78C1400F26BA6 /* loadingAnimationInitializing.html */,
 				7208F44E2AEA72D200248BFD /* loadingAnimationLoading.html */,
-				729552C92AE78C1400F26BA6 /* loadingAnimation1.css */,
-				7208F4522AEA746D00248BFD /* loadingAnimation2.css */,
+				72E56A752AEAB3E100DAA704 /* FutureScene.swift */,
+				72E56A772AEAB3E200DAA704 /* futurescenes.json */,
+				72E56A822AEAB46500DAA704 /* loadingAnimation1.css */,
+				72E56A742AEAB3E100DAA704 /* loadingAnimation2.css */,
 				72D68A652AE821DC00732745 /* SelectButton.swift */,
 				72EC99702AE8D93C00DFCD79 /* Assets.xcassets */,
 			);
@@ -190,17 +196,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				7208F4552AEA8BE900248BFD /* 自由廣場轉場.mp4 in Resources */,
-				7208F4532AEA746D00248BFD /* loadingAnimation2.css in Resources */,
 				729552CA2AE78C1400F26BA6 /* loadingAnimationInitializing.html in Resources */,
 				72EC99712AE8D93C00DFCD79 /* Assets.xcassets in Resources */,
+				72E56A832AEAB46500DAA704 /* loadingAnimation1.css in Resources */,
 				7208F4582AEA8C5E00248BFD /* 101 世貿轉場.mp4 in Resources */,
+				72E56A7C2AEAB3E200DAA704 /* loadingAnimation2.css in Resources */,
+				72E56A7F2AEAB3E200DAA704 /* futurescenes.json in Resources */,
 				721783692AE598D2003C0DFF /* SyncopateBold.ttf in Resources */,
 				721783672AE598A6003C0DFF /* NotoSansCJKTCBold.ttf in Resources */,
 				7208F44F2AEA72D200248BFD /* loadingAnimationLoading.html in Resources */,
 				721783632AE57693003C0DFF /* NotoSansCJKTC.ttf in Resources */,
 				721783622AE57690003C0DFF /* Syncopate.ttf in Resources */,
 				7223B7B82AE0103000A763E9 /* futurescenes.json in Resources */,
-				729552CB2AE78C1400F26BA6 /* loadingAnimation1.css in Resources */,
 				7208F4512AEA733E00248BFD /* loadingAnimationCompleted.html in Resources */,
 				7223B7AF2AE00F2600A763E9 /* Main.storyboard in Resources */,
 				7208F4592AEA8C5E00248BFD /* 松菸轉場.mp4 in Resources */,
@@ -217,6 +224,7 @@
 				7223B7AC2AE00F2600A763E9 /* ViewController.swift in Sources */,
 				7223B7A82AE00F2600A763E9 /* AppDelegate.swift in Sources */,
 				7277CF4D2AE55BD7009F63AB /* ContentView.swift in Sources */,
+				72E56A7D2AEAB3E200DAA704 /* FutureScene.swift in Sources */,
 				7223B7BA2AE011C700A763E9 /* FutureScene.swift in Sources */,
 				72D68A662AE821DC00732745 /* SelectButton.swift in Sources */,
 			);

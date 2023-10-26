@@ -161,7 +161,7 @@ struct ContentView: View {
                             .padding(20)
 
                         Spacer()
-                        Text("     G.H.")
+                        Text("    G.H.")
                             .font(Font.custom("Syncopate", size: 17.68).weight(.bold))
                             .foregroundColor(.black)
                             .padding()
@@ -205,7 +205,7 @@ struct ContentView: View {
                         .foregroundColor(Color(red: 0.11, green: 0.44, blue: 0.85))
                         .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height - 130)
                     LoadingAnimationLoading()
-                        .position(x: 150, y: UIScreen.main.bounds.height + 145)
+                        .position(x: 150, y: UIScreen.main.bounds.height + 135)
                 }
                 else if stageObject.stage == "completed" {
                     LoadingAnimationCompleted()

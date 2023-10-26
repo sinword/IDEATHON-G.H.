@@ -9,7 +9,7 @@ import UIKit
 import SwiftUI
 
 class StageObject: ObservableObject {
-    @Published var stage: String = "completed"
+    @Published var stage: String = "initializing"
 }
 
 let stageObject = StageObject()
