@@ -17,6 +17,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     var futureScenes = [String: FutureScene]()
     var videoPlayer: AVPlayer!
     
+    var imageAnchor: ARImageAnchor!
+    var place: String!
+    var futureScene: FutureScene!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +32,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
         
         loadData()
+        
     }
     
     
@@ -54,10 +59,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
     
+    
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         guard let imageAnchor = anchor as? ARImageAnchor else { return nil }
         guard let place = imageAnchor.referenceImage.name else { return nil }
         guard let futureScene = futureScenes[place] else { return nil }
+        
+        
+        let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
+        let planeNode = SCNNode(geometry: plane)
+        planeNode.eulerAngles.x = -.pi / 2
         
         print(futureScene.place)
         print(futureScene.intro)
@@ -65,24 +76,70 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         DispatchQueue.main.async {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ARImagedetected"), object: nil)
         }
-    
-        let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
         
+        if (startRender) {
+            // Image replace
+            let newPlace = place + " " + customPrompt
+            print(newPlace)
+            
+            
+            let videoURL = Bundle.main.url(forResource: "CountingDown", withExtension: "mp4")!
+            videoPlayer = AVPlayer(url: videoURL)
+            let videoScene = SKScene(size: CGSize(width: 480, height: 360))
+            let videoNode = SKVideoNode(avPlayer: videoPlayer)
+            videoNode.position = CGPoint(x: videoScene.size.width / 2, y: videoScene.size.height / 2)
+            videoNode.size = videoScene.size
+            videoNode.yScale = -1.0
+            videoNode.play()
+            videoScene.addChild(videoNode)
+            plane.firstMaterial?.diffuse.contents = videoScene
+            
+            NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: videoPlayer.currentItem, queue: .main) { _ in
+                plane.firstMaterial?.diffuse.contents = UIImage(named: newPlace)
+            }
+            
+            let node = SCNNode()
+            node.addChildNode(planeNode)
+            
+            let spacing: Float = 0.005
+            
+                //        Title
+            let titleNode = textNode(futureScene.place, font: UIFont.boldSystemFont(ofSize: 10))
+            titleNode.pivotOnTopLeft()
+            
+            titleNode.position.x += Float(plane.width / 2) + spacing
+            titleNode.position.y += Float(plane.height / 2)
+            
+            planeNode.addChildNode(titleNode)
+            
+            let bioNode = textNode(futureScene.intro, font: UIFont.systemFont(ofSize: 4), maxWidth: 100)
+            bioNode.pivotOnTopLeft()
+            
+            bioNode.position.x += Float(plane.width / 2) + spacing
+            bioNode.position.y = titleNode.position.y - titleNode.height - spacing
+            planeNode.addChildNode(bioNode)
+            return node
+        }
+        else {
+            let node = SCNNode()
+            return node
+        }
+        
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, willUpdate node: SCNNode, for anchor: ARAnchor) {
+        guard let imageAnchor = anchor as? ARImageAnchor else { return }
+        guard let place = imageAnchor.referenceImage.name else { return }
+        guard let futureScene = futureScenes[place] else { return }
+        
+        let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
         let planeNode = SCNNode(geometry: plane)
         planeNode.eulerAngles.x = -.pi / 2
-        
-        // Image replace
-        
         let newPlace = place + " " + customPrompt
 //        let newPlace = place.replacingOccurrences(of: "Before", with: " " + customPrompt)
 //        let newPlace = "Gas Station MinimalistSunnyHigh"
         print(newPlace)
         
-        // Post a notification to refresh the UI
-        
-        // replace AR image with a video, video size follows the image's size
-        // Play video on the plane
-        // After video is played, fade away with a new image
         let videoURL = Bundle.main.url(forResource: "CountingDown", withExtension: "mp4")!
         videoPlayer = AVPlayer(url: videoURL)
         let videoScene = SKScene(size: CGSize(width: 480, height: 360))
@@ -93,35 +150,31 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         videoNode.play()
         videoScene.addChild(videoNode)
         plane.firstMaterial?.diffuse.contents = videoScene
-        
-        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: videoPlayer.currentItem, queue: .main) { _ in
+
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: videoPlayer.currentItem, queue: .main)
+        { _ in
             plane.firstMaterial?.diffuse.contents = UIImage(named: newPlace)
         }
-        
-        let node = SCNNode()
-        node.addChildNode(planeNode)
         
         let spacing: Float = 0.005
         
         // Title
         let titleNode = textNode(futureScene.place, font: UIFont.boldSystemFont(ofSize: 10))
         titleNode.pivotOnTopLeft()
-        
         titleNode.position.x += Float(plane.width / 2) + spacing
         titleNode.position.y += Float(plane.height / 2)
-        
         planeNode.addChildNode(titleNode)
         
         let bioNode = textNode(futureScene.intro, font: UIFont.systemFont(ofSize: 4), maxWidth: 100)
         bioNode.pivotOnTopLeft()
-        
         bioNode.position.x += Float(plane.width / 2) + spacing
         bioNode.position.y = titleNode.position.y - titleNode.height - spacing
         planeNode.addChildNode(bioNode)
-        return node
-    
+        
+        node.addChildNode(planeNode)
     }
-    
+
+
     func loadData() {
         guard let url = Bundle.main.url(forResource: "futurescenes", withExtension: "json") else {
             fatalError("Unable to find JSON in bundle")
@@ -156,7 +209,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         return textNode
     }
-    
 }
 
 // Essentail for almost every single ARKit project

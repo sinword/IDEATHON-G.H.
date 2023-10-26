@@ -11,6 +11,7 @@ import ARKit
 import WebKit
 
 var customPrompt = ""
+var startRender = false
 
 struct ARUIView: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> ViewController {
@@ -70,7 +71,7 @@ func readyToGenerate(styleSelected: [Bool], conditionSelected: [Bool], strengthS
 
 struct ContentView: View {
     @State private var imageDetected = false
-    @State var readyToGenerate = false
+    @State private var startGenerate = false
     var style = "None"
     var condition = "None"
     var strength = "None"
@@ -379,7 +380,7 @@ struct ContentView: View {
                         Button(action: {
                             if IDEATHON_ImageReplacement.readyToGenerate(styleSelected: styleSelected, conditionSelected: conditionSelected, strengthSelected: strengthSelected) {
                                 print("Generate Started: \(customPrompt)")
-                                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "StartingGenerate"), object: nil)
+                                startRender = true
                             }
                         }) {
                             if IDEATHON_ImageReplacement.readyToGenerate(styleSelected: styleSelected, conditionSelected: conditionSelected, strengthSelected: strengthSelected) {
@@ -396,7 +397,7 @@ struct ContentView: View {
                             }
                         }
                     }
-                    .position(x: UIScreen.main.bounds.width - 180, y: UIScreen.main.bounds.height - 140)               
+                    .position(x: UIScreen.main.bounds.width - 180, y: UIScreen.main.bounds.height - 140)     
                 }
                 else {
                     Text("目 標 鎖 定 中...")
