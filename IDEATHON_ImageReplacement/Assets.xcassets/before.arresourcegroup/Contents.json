@@ -5,10 +5,13 @@
   },
   "resources" : [
     {
-      "filename" : "加油站.arreferenceimage"
+      "filename" : "101 世貿.arreferenceimage"
     },
     {
-      "filename" : "總統府.arreferenceimage"
+      "filename" : "松菸.arreferenceimage"
+    },
+    {
+      "filename" : "自由廣場.arreferenceimage"
     }
   ]
 }
