@@ -99,23 +99,22 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let node = SCNNode()
         node.addChildNode(planeNode)
         
-        let spacing: Float = 0.005
-        
-        
-        let titleNode = textNode(futureScene.place, font: UIFont.boldSystemFont(ofSize: 10))
-        titleNode.pivotOnTopLeft()
-        
-        titleNode.position.x += Float(plane.width / 2) + spacing
-        titleNode.position.y += Float(plane.height / 2)
-        
-        planeNode.addChildNode(titleNode)
-        
-        let bioNode = textNode(futureScene.intro, font: UIFont.systemFont(ofSize: 4), maxWidth: 100)
-        bioNode.pivotOnTopLeft()
-        
-        bioNode.position.x += Float(plane.width / 2) + spacing
-        bioNode.position.y = titleNode.position.y - titleNode.height - spacing
-        planeNode.addChildNode(bioNode)
+//        let spacing: Float = 0.005
+//        
+//        let titleNode = textNode(futureScene.place, font: UIFont.boldSystemFont(ofSize: 10))
+//        titleNode.pivotOnTopLeft()
+//        
+//        titleNode.position.x += Float(plane.width / 2) + spacing
+//        titleNode.position.y += Float(plane.height / 2)
+//        
+//        planeNode.addChildNode(titleNode)
+//        
+//        let bioNode = textNode(futureScene.intro, font: UIFont.systemFont(ofSize: 4), maxWidth: 100)
+//        bioNode.pivotOnTopLeft()
+//        
+//        bioNode.position.x += Float(plane.width / 2) + spacing
+//        bioNode.position.y = titleNode.position.y - titleNode.height - spacing
+//        planeNode.addChildNode(bioNode)
         return node
     }
 

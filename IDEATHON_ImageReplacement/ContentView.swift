@@ -244,14 +244,14 @@ struct ContentView: View {
                         Text("請選擇客製化的樣貌 ")
                             .font((Font.custom("", size: 20)).weight(.medium))
                             .kerning(4)
-                            .foregroundColor(Color(red: 0.11, green: 0.44, blue: 0.85))
+                            .foregroundColor(Color("SystemBlue"))
                         
                         Text("Please Select Your Preferences. ")
                             .font((Font.custom("Syncopate", size: 16)).weight(.bold))
                             .kerning(2)
-                            .foregroundColor(Color(red: 0.11, green: 0.44, blue: 0.85))
+                            .foregroundColor(Color("SystemBlue"))
                     }
-                    .position(x: 420, y: UIScreen.main.bounds.height - 220)
+                    .position(x: 415, y: UIScreen.main.bounds.height - 220)
                     
                     HStack(alignment: .lastTextBaseline) {
                         Text("Style")
